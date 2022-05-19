@@ -102,3 +102,10 @@ def downvote(id):
     vm = Downvote(post=post, downvote=1)
     vm.save()
     return redirect(url_for('main.posts'))
+
+@main.route("/admin/create/tables")
+def dbtables():
+    from app.__init__ import db
+    db.create_all()
+    return "tables_created"
+

@@ -19,12 +19,14 @@ import os
 class Config:
     # debug = True
     SECRET_KEY = "joseph"
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:root@localhost/new'
+    SQLALCHEMY_DATABASE_URI = "postgresql://oaurdmjzxtafsu:c865e5ec782d84b80f423f12573216d893aa72e2cda87e303e028981421e2a98@ec2-35-168-194-15.compute-1.amazonaws.com:5432/d89l022l72riej"
     # SQLALCHEMY_DATABASE_URI = "postgres://hefpwasarrepud:862bfe61f42443b398c27ddf2cf00a558c8161b619f7e3767198cd368a0705d8@ec2-3-231-82-226.compute-1.amazonaws.com:5432/d3vqpr7p2rrdma"
 
     #  email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
+    HOST= "0.0.O.0"
+    PORT = 3002
     MAIL_USE_TLS = True
     # MAIL_USE_SSL = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
@@ -44,7 +46,7 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:root@localhost/new'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:root@localhost/new'
     # uri = os.getenv('DATABASE_URL')
     # if uri and uri.startswith('postgres://'):
     #  uri = uri.replace('postgres://', 'postgresql://', 1)
@@ -56,7 +58,7 @@ class TestConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:root@localhost/new'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:root@localhost/new'
 
 class DevConfig(Config):
     '''
@@ -65,7 +67,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:root@localhost/new'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:root@localhost/new'
     
     
     DEBUG = True
